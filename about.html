@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Janiru Hansaga</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Janiru Hansaga</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" style="color:var(--primary-color);">About</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="janiruonline.html">MY tool</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+            <li class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </li>
+        </ul>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <section class="about-section">
+        <div class="about-container">
+
+            <div class="about-img-wrapper">
+                <img src="my about.png" alt="Janiru Hansaga">
+            </div>
+
+            <div class="about-content">
+                <h2>About <span class="highlight">Me</span></h2>
+                <span class="subtitle">Tech Enthusiast & Creative Developer</span>
+
+                <p>
+                    Hello! I'm <strong>Janiru Hansaga</strong>, a developer who loves blending logic with creativity.
+                    My passion lies at the intersection of <strong>Web Development</strong> and <strong>Artificial
+                        Intelligence</strong>.
+                </p>
+                <p>
+                    I build custom LMS solutions using Moodle and WordPress, and develop dynamic web applications with
+                    PHP and Node.js.
+                    Beyond coding, I experiment with digital art—from producing AI-generated rap music to creating
+                    digital characters like
+                    <strong>'Blackpanth AI'</strong>.
+                </p>
+
+                <div class="skills-grid">
+                    <div class="skill-tag">Web Development</div>
+                    <div class="skill-tag">AI & Machine Learning</div>
+                    <div class="skill-tag">AI video creating</VIdeo></div>
+                    <div class="skill-tag">Node.js</div>
+                </div>
+
+                <div class="btn-group">
+                    <a href="https://www.facebook.com/janiruofficial" class="btn">Contact Me</a>
+                    <a href="janiruonline.html" class="btn-secondary">My Work</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <p>
+            &copy; 2025 Janiru Hansaga. All Rights Reserved.
+            <a href="admin.html" class="admin-link"><i class="fa-solid fa-lock"></i> Admin</a>
+        </p>
+    </footer>
+    <script>
+        // Dark Mode Logic
+        const toggleSwitch = document.querySelector('#checkbox');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+            if (currentTheme === 'dark-mode') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        toggleSwitch.addEventListener('change', switchTheme, false);
+
+        // Mobile Menu
+        function toggleMenu() {
+            const nav = document.getElementById("navLinks");
+            nav.classList.toggle("active");
+
+            const icon = document.querySelector(".hamburger i");
+            if (nav.classList.contains("active")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+            } else {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+            }
+        }
+    </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script src="music.js"></script>
+</body>
+
+</html>

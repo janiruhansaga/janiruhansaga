@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janiru Hansaga | Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Janiru Hansaga</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" style="color:var(--primary-color);">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="janiruonline.html">MY tool</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+            <li class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </li>
+        </ul>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h3>Hello, I am</h3>
+            <h1><span class="typing"></span></h1>
+            <p>I bridge the gap between lines of code and artistic concepts.
+                My world exists between technology and art—building web applications while bringing digital characters
+                like the <strong>'Urban Panther'</strong> to life.</p>
+            <a href="janiruonline.html" class="btn">View My Work</a>
+        </div>
+        <div class="hero-image">
+            <img src="hero.png" alt="Janiru Hansaga">
+        </div>
+    </header>
+
+    <section class="ai-section">
+        <div class="ai-container">
+            <div class="ai-image-box">
+                <img src="panther1.jpeg" alt="AI Character Main" class="ai-img-main">
+                <img src="panther2.jpeg" alt="AI Character Secondary" class="ai-img-secondary">
+                <img src="panther3.png" alt="AI Character Small" class="ai-img-small">
+            </div>
+
+            <div class="ai-content-box">
+                <h2>Meet <span class="highlight">Blackpanth AI</span></h2>
+                <h3>Digital Identity Experiment</h3>
+                <p>
+                    More than just an avatar, BlackPanther is an experiment in digital identity. Powered by advanced
+                    machine learning algorithms, this character allows me to explore the frontiers of digital art and
+                    media. It stands as a symbol of innovation in the Sri Lankan tech space.
+                </p>
+                <a href="https://www.tiktok.com/@blackpanthai.lk" class="btn">MY Tiktok</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="education-section" id="education">
+        <h2 class="section-title">My <span class="highlight">Education</span></h2>
+
+        <div class="edu-container">
+            <div class="edu-box">
+                <div class="edu-img">
+                    <img src="images.jpg" alt="Dharmasoka College">
+                </div>
+                <div class="edu-content">
+                    <span class="edu-date">2012-2018</span>
+                    <h3>Dharmasoka College</h3>
+                    <p>Primary education (Grade 1 to 5).</p>
+                </div>
+            </div>
+
+            <div class="edu-box">
+                <div class="edu-img">
+                    <img src="President's_College_Maharagama_Crest.png" alt="Presidents College">
+                </div>
+                <div class="edu-content">
+                    <span class="edu-date">2019-2025</span>
+                    <h3>President's College</h3>
+                    <p>Secondary education (Grade 6 to 11).</p>
+                </div>
+            </div>
+
+            <div class="edu-box">
+                <div class="edu-img">
+                    <img src="Crest_of_Nalanda_College.png" alt="Nalanda College">
+                </div>
+                <div class="edu-content">
+                    <span class="edu-date">2025-Present</span>
+                    <h3>Nalanda College</h3>
+                    <p>Currently studying in the Commerce stream for A/Ls.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>
+            &copy; 2025 Janiru Hansaga. All Rights Reserved.
+        </p>
+    </footer>
+    <script>
+        // Dark Mode
+        const toggleSwitch = document.querySelector('#checkbox');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+            if (currentTheme === 'dark-mode') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        toggleSwitch.addEventListener('change', switchTheme, false);
+
+        // Typing Effect
+        const text = "Janiru Hansaga";
+        const typingElement = document.querySelector(".typing");
+        let index = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            typingElement.textContent = text.substring(0, index);
+            let speed = 150;
+            if (isDeleting) { index--; speed = 100; } else { index++; }
+
+            if (!isDeleting && index === text.length + 1) {
+                isDeleting = true; speed = 2000;
+            } else if (isDeleting && index === 0) {
+                isDeleting = false; speed = 500;
+            }
+            setTimeout(typeEffect, speed);
+        }
+        window.onload = typeEffect;
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById("navLinks");
+            nav.classList.toggle("active");
+
+            // Icon change logic
+            const icon = document.querySelector(".hamburger i");
+            if (nav.classList.contains("active")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+            } else {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script src="music.js"></script>
+</body>
+
+</html>

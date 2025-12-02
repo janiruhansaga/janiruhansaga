@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janiru Hansaga</title>
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/28/86/8f/28868f02252bfa1b1b00faae0b0545f9.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Position canvas behind all content */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: #0d0d0d; /* Dark background color */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Glassmorphism effect for UI elements */
+        .glass {
+            background: rgba(29, 35, 42, 0.6); /* Semi-transparent dark background */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937; /* bg-gray-800 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563; /* bg-gray-600 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* bg-gray-500 */
+        }
+        /* Style for the iframe to ensure it fills the container */
+        #tool-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px; /* Slightly rounded corners for the iframe content */
+        }
+        /* Mobile menu transition */
+        #sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        /* Initial state for mobile menu (hidden) */
+        @media (max-width: 768px) {
+            #sidebar {
+                transform: translateX(-100%);
+            }
+        }
+        /* Active state for mobile menu (visible) */
+        #sidebar.active {
+            transform: translateX(0);
+        }
+
+        /* Active/Hover states for tool links with glow effect */
+        .tool-link.active, .tool-link:hover {
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.7), rgba(168, 85, 247, 0.7));
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+            transform: translateY(-2px);
+        }
+        .tool-link {
+             transition: all 0.2s ease-in-out;
+        }
+        
+        /* Glow effect for welcome icon */
+        #welcome-screen .fa-tools {
+            text-shadow: 0 0 20px rgba(99, 102, 241, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans antialiased flex h-screen overflow-hidden">
+    
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="glass w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 z-30 flex flex-col">
+        <div class="px-4 flex items-center justify-between flex-shrink-0">
+            <a href="index.html" class="text-white text-2xl font-extrabold flex items-center">
+                <i class="fas fa-toolbox mr-3 text-indigo-400"></i>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-lg">Janiru Hansaga</span>
+            </a>
+            <!-- Mobile Close Button -->
+            <button id="close-menu" class="md:hidden text-2xl">
+                &times;
+            </button>
+        </div>
+        <nav class="overflow-y-auto">
+            <!-- Tool Links -->
+            <ul id="tool-list" class="space-y-2">
+                <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200" data-url="https://effulgent-dodol-d198d1.netlify.app/"><i class="fas fa-qrcode fa-fw mr-2"></i>QR Master</a></li>
+                <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200" data-url="https://loquacious-blancmange-908e35.netlify.app/"><i class="fas fa-calendar-alt fa-fw mr-2"></i>Timetable Generator</a></li>
+                <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200" data-url="https://majestic-kangaroo-e2204c.netlify.app/"><i class="fas fa-calculator fa-fw mr-2"></i>MathSolver Pro</a></li>
+                <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200" data-url="https://willowy-zuccutto-01bce3.netlify.app/"><i class="fas fa-key fa-fw mr-2"></i>SecurePass Pro</a></li>
+                <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200" data-url="https://tranquil-pithivier-48970e.netlify.app/"><i class="fas fa-palette fa-fw mr-2"></i>ChromaCraft</a></li>
+                <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200" data-url="https://bright-duckanoo-e2a718.netlify.app/"><i class="fas fa-id-card fa-fw mr-2"></i>Sri Lanka NIC Finder</a></li>
+                <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200" data-url="https://lovely-gumption-d94d6b.netlify.app/"><i class="fas fa-file-pdf fa-fw mr-2"></i>PDF Creator Pro</a></li>
+                <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200" data-url="https://bespoke-jalebi-0b4317.netlify.app/"><i class="fas fa-mail-bulk fa-fw mr-2"></i>SL Postal Codes</a></li>
+                <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200" data-url="https://incredible-pegasus-8a147a.netlify.app/"><i class="fas fa-birthday-cake fa-fw mr-2"></i>Birthday Countdowns</a></li>
+                <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200" data-url="https://preeminent-gecko-1ba64b.netlify.app/"><i class="fas fa-paint-brush fa-fw mr-2"></i>ColorCraft</a></li>
+                <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200" data-url="https://janiruhansaga.github.io/PDF-TO-WORD-JANIRU.lk/"><i class="fas fa-file-word fa-fw mr-2"></i>PDF to Word</a></li>
+                <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200" data-url="https://sinhala-audio-converter.vercel.app/"><i class="fas fa-microphone-alt fa-fw mr-2"></i>Audio to Text</a></li>
+                <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200" data-url="https://mp4-to-mp3-web-conve-jrlg.bolt.host/"><i class="fas fa-file-audio fa-fw mr-2"></i>MP4 to MP3 Converter</a></li>
+                <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200" data-url="https://advanced-webm-to-mp3-ug2z.bolt.host/"><i class="fas fa-file-audio fa-fw mr-2"></i>WebM to MP3 Converter</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div id="main-app" class="flex-1 flex flex-col">
+        <!-- Header -->
+        <header class="glass shadow-md p-4 flex items-center justify-between z-10">
+            <div class="flex items-center">
+                <!-- Mobile Menu Button -->
+                <button id="open-menu" class="md:hidden text-white text-2xl mr-4">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 id="tool-title" class="text-lg sm:text-xl font-semibold text-gray-300">welcome JH HUB</h1>
+            </div>
+            <button id="open-profile-btn" class="font-bold uppercase tracking-wider text-white hover:text-indigo-400 transition text-sm sm:text-base">MY PROFILE</button>
+        </header>
+
+        <!-- Tool Display Area -->
+        <main class="flex-1 p-2 sm:p-4 bg-transparent overflow-y-auto">
+            <div id="welcome-screen" class="flex flex-col items-center justify-center h-full text-center text-gray-400">
+                <i class="fas fa-tools text-5xl sm:text-6xl mb-6 text-indigo-500"></i>
+                <h2 class="text-3xl sm:text-4xl font-bold mb-2 text-white">Your Janiru Hansaga's Dashboard</h2>
+                <p class="max-w-md text-sm sm:text-base">Select a tool from the sidebar to get started. All your web utilities, right here in one place.</p>
+            </div>
+            <div id="loading-spinner" class="hidden items-center justify-center h-full">
+                <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-indigo-500"></div>
+            </div>
+            <iframe id="tool-iframe" class="hidden"></iframe>
+        </main>
+    </div>
+    
+    <!-- Overlay for mobile menu -->
+    <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-20 md:hidden"></div>
+
+    <!-- Profile Slide-out Panel -->
+    <div id="profile-page" class="glass fixed inset-y-0 right-0 z-50 w-full max-w-md p-6 sm:p-8 transition-transform duration-300 ease-in-out transform translate-x-full overflow-y-auto">
+        <div class="flex justify-between items-center mb-6 sm:mb-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">About Me</h2>
+            <button id="close-profile-btn" class="text-2xl text-gray-400 hover:text-white" title="Close Profile">&times;</button>
+        </div>
+        <div class="flex flex-col items-center gap-6 sm:gap-8">
+            <img src="1.png">
+            <div class="text-center">
+                <p class="text-gray-300 mb-2">A designer who loves to create new things by combining lines of code and artistic concepts.</p>
+                <p class="text-gray-300 mb-2">My world is built between technology and art. On one hand, I find technical solutions to problems by creating web applications and software. On the other hand, I explore my creativity by bringing digital characters like 'Black Panther' to life and expressing my ideas through them.</p>
+                <p class="text-gray-300 mb-6">This is my digital canvas. I invite you to explore my world through my projects!</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="https://web.facebook.com/januru.online" target="_blank" class="text-gray-400 hover:text-blue-500 transition text-2xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://github.com/janiruhansaga" target="_blank" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-github"></i></a>
+                    <a href="mailto:janiruhansaga2025@gmail.com" class="text-gray-400 hover:text-red-500 transition text-2xl"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Overlay for profile menu -->
+    <div id="profile-overlay" class="fixed inset-0 bg-black opacity-50 hidden z-40"></div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toolLinks = document.querySelectorAll('.tool-link');
+            const toolIframe = document.getElementById('tool-iframe');
+            const toolTitle = document.getElementById('tool-title');
+            const welcomeScreen = document.getElementById('welcome-screen');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            const sidebar = document.getElementById('sidebar');
+            const mainApp = document.getElementById('main-app');
+            const openMenuBtn = document.getElementById('open-menu');
+            const closeMenuBtn = document.getElementById('close-menu');
+            const overlay = document.getElementById('overlay');
+            const profilePage = document.getElementById('profile-page');
+            const openProfileBtn = document.getElementById('open-profile-btn');
+            const closeProfileBtn = document.getElementById('close-profile-btn');
+            const profileOverlay = document.getElementById('profile-overlay');
+
+            let activeLink = null;
+
+            // --- Sidebar Logic ---
+            const toggleSidebar = () => {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('hidden');
+            };
+
+            openMenuBtn.addEventListener('click', toggleSidebar);
+            closeMenuBtn.addEventListener('click', toggleSidebar);
+            overlay.addEventListener('click', toggleSidebar);
+
+            // --- Profile Page Logic ---
+            const closeProfile = () => {
+                profilePage.classList.add('translate-x-full');
+                profileOverlay.classList.add('hidden');
+            };
+
+            openProfileBtn.addEventListener('click', () => {
+                profilePage.classList.remove('translate-x-full');
+                profileOverlay.classList.remove('hidden');
+            });
+            
+            closeProfileBtn.addEventListener('click', closeProfile);
+            profileOverlay.addEventListener('click', closeProfile);
+
+
+            // --- Tool Loading Logic ---
+            toolLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    const url = link.dataset.url;
+                    const title = link.textContent;
+
+                    // Update UI states
+                    welcomeScreen.classList.add('hidden');
+                    toolIframe.classList.add('hidden');
+                    loadingSpinner.classList.remove('hidden');
+                    loadingSpinner.classList.add('flex');
+                    
+                    toolTitle.textContent = `Loading ${title}...`;
+
+                    // Remove active class from previous link
+                    if (activeLink) {
+                        activeLink.classList.remove('active');
+                    }
+                    // Add active class to current link
+                    link.classList.add('active');
+                    activeLink = link;
+
+                    // Set iframe source
+                    toolIframe.src = url;
+
+                    // Close sidebar on mobile after selection
+                    if (window.innerWidth < 768) {
+                        toggleSidebar();
+                    }
+                });
+            });
+            
+            // Handle iframe loading
+            toolIframe.addEventListener('load', () => {
+                loadingSpinner.classList.add('hidden');
+                loadingSpinner.classList.remove('flex');
+                toolIframe.classList.remove('hidden');
+                if (activeLink) {
+                   toolTitle.textContent = activeLink.textContent;
+                }
+            });
+
+            // --- PARTICLE ANIMATION SCRIPT ---
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            let particlesArray;
+
+            // Mouse position
+            let mouse = {
+                x: null,
+                y: null,
+                radius: (canvas.height/100) * (canvas.width/100)
+            }
+
+            window.addEventListener('mousemove', 
+                function(event){
+                    mouse.x = event.x;
+                    mouse.y = event.y;
+                }
+            );
+            window.addEventListener('mouseout', 
+                function(){
+                    mouse.x = undefined;
+                    mouse.y = undefined;
+                }
+            );
+
+
+            // Create particle
+            class Particle {
+                constructor(x, y, directionX, directionY, size, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.directionX = directionX;
+                    this.directionY = directionY;
+                    this.size = size;
+                    this.color = color;
+                }
+                // Method to draw individual particle
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                    ctx.fill();
+                }
+                // Check particle position, mouse position, move the particle, draw the particle
+                update() {
+                    // Check if particle is still within canvas
+                    if (this.x > canvas.width || this.x < 0) {
+                        this.directionX = -this.directionX;
+                    }
+                    if (this.y > canvas.height || this.y < 0) {
+                        this.directionY = -this.directionY;
+                    }
+                    // Check mouse collision
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx*dx + dy*dy);
+                    if (distance < mouse.radius + this.size){
+                        if(mouse.x < this.x && this.x < canvas.width - this.size * 10) {
+                            this.x += 3;
+                        }
+                        if (mouse.x > this.x && this.x > this.size * 10) {
+                            this.x -= 3;
+                        }
+                        if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
+                            this.y += 3;
+                        }
+                        if (mouse.y > this.y && this.y > this.size * 10) {
+                            this.y -= 3;
+                        }
+                    }
+                    // Move particle
+                    this.x += this.directionX;
+                    this.y += this.directionY;
+                    // Draw particle
+                    this.draw();
+                }
+            }
+
+            // Create particle array
+            function init() {
+                particlesArray = [];
+                let numberOfParticles = (canvas.height * canvas.width) / 9000;
+                for (let i = 0; i < numberOfParticles; i++) {
+                    let size = (Math.random() * 2.5) + 1;
+                    let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                    let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                    let directionX = (Math.random() * .4) - 0.2;
+                    let directionY = (Math.random() * .4) - 0.2;
+                    let color = 'rgba(255, 255, 255, 0.8)';
+
+                    particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+                }
+            }
+
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+                ctx.clearRect(0,0,canvas.width, canvas.height);
+
+                for (let i = 0; i < particlesArray.length; i++) {
+                    particlesArray[i].update();
+                }
+                connect();
+            }
+
+            // Check if particles are close enough to draw a line between them
+            function connect() {
+                let opacityValue = 1;
+                for (let a = 0; a < particlesArray.length; a++) {
+                    for (let b = a; b < particlesArray.length; b++) {
+                        let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + 
+                                       ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                        if (distance < (canvas.width/7) * (canvas.height/7)) {
+                            opacityValue = 1 - (distance/20000);
+                            ctx.strokeStyle = `rgba(255, 255, 255, ${opacityValue})`;
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            // Resize event
+            window.addEventListener('resize', 
+                function() {
+                    canvas.width = innerWidth;
+                    canvas.height = innerHeight;
+                    mouse.radius = (canvas.height/100) * (canvas.width/100);
+                    init();
+                }
+            );
+            
+            init();
+            animate();
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script src="music.js"></script>
+</body>
+</html>
+
+
