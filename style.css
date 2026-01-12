@@ -65,7 +65,8 @@ nav {
     color: var(--logo-color);
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-decoration: none;
+    text-decoration: none !important;
+    border: none;
 }
 
 .nav-links {
@@ -861,6 +862,7 @@ footer a.admin-link:hover {
     color: var(--primary-color);
     opacity: 1;
 }
+
 /* =========================================
    PAGINATION STYLES (Add to style.css)
    ========================================= */
@@ -875,7 +877,8 @@ footer a.admin-link:hover {
 }
 
 .page-btn {
-    background-color: #111; /* බොක්ස් එකේ පාට */
+    background-color: #111;
+    /* බොක්ස් එකේ පාට */
     color: #fff;
     border: 1px solid #333;
     width: 40px;
@@ -884,7 +887,8 @@ footer a.admin-link:hover {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border-radius: 4px; /* පොඩි රවුම් හැඩය */
+    border-radius: 4px;
+    /* පොඩි රවුම් හැඩය */
     font-weight: bold;
     transition: 0.3s;
     font-family: 'Poppins', sans-serif;
@@ -897,8 +901,10 @@ footer a.admin-link:hover {
 
 /* දැනට තියෙන පිටුව පෙන්නන පාට (Active Page) */
 .page-btn.active {
-    background-color: var(--primary-color); /* නිල් පාට */
-    color: #000; /* අකුරු කළු පාට */
+    background-color: var(--primary-color);
+    /* නිල් පාට */
+    color: #000;
+    /* අකුරු කළු පාට */
     border-color: var(--primary-color);
 }
 
