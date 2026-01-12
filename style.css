@@ -65,6 +65,7 @@ nav {
     color: var(--logo-color);
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-decoration: none;
 }
 
 .nav-links {

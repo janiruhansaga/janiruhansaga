@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download | Janiru Hansaga</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .download-section {
+            padding: 80px 10%;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .download-container {
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .download-icon {
+            font-size: 5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .download-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .download-desc {
+            color: var(--sub-text);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="https://janiruhansaga.com" class="logo">Janiru Hansaga</a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="janiruonline.html">MY tool</a></li>
+            <li><a href="download.html" style="color:var(--primary-color);">Download</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+            <li class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </li>
+        </ul>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <section class="download-section">
+        <div class="download-container">
+            <div class="download-icon">
+                <img src="icon.png" alt="JHP Capture Logo"
+                    style="width: 150px; height: 150px; object-fit: contain; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+            </div>
+            <h2 class="download-title">Download <span class="highlight">JHP Capture</span></h2>
+            <p class="download-desc">
+                Get the latest version of JHP Capture. Capture your screen, record audio, and more with ease.
+                <br>Version: 1.0.0
+            </p>
+            <a href="JHP capture Setup 1.0.0.exe" class="btn" download>Download Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>
+            &copy; 2025 Janiru Hansaga. All Rights Reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Dark Mode Logic
+        const toggleSwitch = document.querySelector('#checkbox');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+            if (currentTheme === 'dark-mode') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        toggleSwitch.addEventListener('change', switchTheme, false);
+
+        // Mobile Menu
+        function toggleMenu() {
+            const nav = document.getElementById("navLinks");
+            nav.classList.toggle("active");
+
+            const icon = document.querySelector(".hamburger i");
+            if (nav.classList.contains("active")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+            } else {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+            }
+        }
+    </script>
+    <script src="music.js"></script>
+</body>
+
+</html>
