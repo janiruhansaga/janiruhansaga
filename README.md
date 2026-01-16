@@ -1,8 +1,8 @@
 <div align="center">
 
-# <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=35&pause=1000&color=39FF14&center=true&vCenter=true&width=600&lines=Hi+there,+I'm+Janiru+Hansaga;Creative+Developer;Tech+Enthusiast" alt="Typing SVG" />
+# <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=35&pause=1000&color=39FF14&center=true&vCenter=true&width=600&lines=Hi+there,+I'm+Janiru+Hansaga+Perera;Creative+Developer;Tech+Enthusiast" alt="Typing SVG" />
 
-### 🚀 Passionate Student & Full-Stack Enthusiast from Sri Lanka
+### 🚀 10th Grade Student | Web Developer | AI & Design Enthusiast from Sri Lanka
 
 <img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/greetings.gif" width="200px">
 
@@ -15,16 +15,26 @@
 
 </div>
 
-### 👨‍💻 About Me:
-- ⚡ **Student:** Currently in my 10th grade, balancing school and code.
-- 🎨 **Creative Mind:** Developing the **Urban Panther** character universe.
-- 🛠️ **Problem Solver:** Working on tools like **Sinhala Voice-to-Text** and **LMS systems**.
-- 🌱 **Learning:** Deep diving into Advanced JavaScript and AI Model training.
-- 💻 **Tech Hobby:** PC hardware building and optimization.
+## 👋 About Me
+
+I am **Janiru Hansaga Perera**, a passionate 10th-grade student developer from Sri Lanka. I love building web applications and exploring the latest trends in Artificial Intelligence. My journey in tech is driven by curiosity and a desire to create tools that make a difference. 
+
+When I'm not coding, I spend my time as a **Creative Mind**, building the **Urban Panther** character universe and experimenting with AI-driven digital art.
 
 ---
 
-### 🛠 Tech Stack & Tools:
+## 🚀 Expertise & Projects
+
+I focus on creating interactive and efficient digital solutions. Here are some of my key works:
+
+- 🦁 **Urban Panther:** Developing an original character universe through AI storytelling and digital design.
+- 🎙️ **Sinhala Voice-to-Text:** A specialized web tool designed to simplify Sinhala typing for everyone.
+- 🎓 **Student Management System:** A robust system built using IndexedDB and QR integration for schools.
+- 📚 **Notes Sharing Platform:** A dedicated space for A/L students to access and share educational materials.
+
+---
+
+## 🛠 Tech Stack & Tools
 
 | **Category** | **Tools & Languages** |
 | :--- | :--- |
@@ -35,7 +45,7 @@
 
 ---
 
-### 📊 GitHub Activity & Stats:
+## 📊 GitHub Activity & Stats
 
 <div align="center">
 
@@ -50,11 +60,12 @@
 
 ---
 
-### 🤝 Let's Connect:
+## 🌐 Let's Connect
+
 <p align="center">
-<a href="https://www.facebook.com/janiruofficial" target="_blank"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" /></a>
-<a href="mailto:janiruhansaga2025@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-<a href="https://github.com/janiruhansaga"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
+<a href="https://www.facebook.com/janiruofficial" target="_blank">![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)</a> 
+<a href="mailto:janiruhansaga2025@gmail.com">![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=Gmail&logoColor=white)</a> 
+<a href="https://github.com/janiruhansaga">![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)</a>
 </p>
 
 <div align="center">
