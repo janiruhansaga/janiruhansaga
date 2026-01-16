@@ -46,10 +46,10 @@
 ## 🌐 Socials:
 
 <p align="center">
-<a href="https://facebook.com/janiruofficial" target="_blank">![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)</a> 
-<a href="https://tiktok.com/@janiruofficial" target="_blank">![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)</a> 
-<a href="mailto:janiruhansagaperera2027@gmail.com">![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)</a>
-<a href="https://github.com/janiruhansaga">![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)</a>
+<a href="https://facebook.com/janiruofficial" target="_blank"></a> 
+<a href="https://tiktok.com/@janiruofficial" target="_blank"></a> 
+<a href="mailto:janiruhansagaperera2027@gmail.com"></a>
+<a href="https://github.com/janiruhansaga"></a>
 </p>
 
 <div align="center">
