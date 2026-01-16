@@ -1,51 +1,42 @@
 <div align="center">
 
-# <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=35&pause=1000&color=39FF14&center=true&vCenter=true&width=600&lines=Hi+there,+I'm+Janiru+Hansaga+Perera;Creative+Developer;Tech+Enthusiast" alt="Typing SVG" />
+# <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=35&pause=1000&color=39FF14&center=true&vCenter=true&width=600&lines=Hi+there,+I'm+Janiru+Hansaga;Creative+Developer;Tech+Enthusiast" alt="Typing SVG" />
 
-### 🚀 10th Grade Student | Web Developer | AI & Design Enthusiast from Sri Lanka
+### 🚀 10th Grade Student | Web Developer | AI & Design Enthusiast
 
 <img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/greetings.gif" width="200px">
 
 ---
 
 ### 🏆 GitHub Trophies
-[![trophies](https://user-images.githubusercontent.com/6661165/91657958-61b4fd00-eb00-11ea-9def-dc7ef5367e34.png)](https://github.com/ryo-ma/github-profile-trophy)
+[![trophies](https://github-profile-trophy.vercel.app/?username=janiruhansaga&theme=tokyonight&no-bg=true&margin-w=15)](https://github.com/ryo-ma/github-profile-trophy)
 
 ---
 
 </div>
 
-## 👋 About Me
+## 💫 About Me:
 
-I am **Janiru Hansaga Perera**, a passionate 10th-grade student developer from Sri Lanka. I love building web applications and exploring the latest trends in Artificial Intelligence. My journey in tech is driven by curiosity and a desire to create tools that make a difference. 
-
-When I'm not coding, I spend my time as a **Creative Mind**, building the **Urban Panther** character universe and experimenting with AI-driven digital art.
-
----
-
-## 🚀 Expertise & Projects
-
-I focus on creating interactive and efficient digital solutions. Here are some of my key works:
-
-- 🦁 **Urban Panther:** Developing an original character universe through AI storytelling and digital design.
-- 🎙️ **Sinhala Voice-to-Text:** A specialized web tool designed to simplify Sinhala typing for everyone.
-- 🎓 **Student Management System:** A robust system built using IndexedDB and QR integration for schools.
-- 📚 **Notes Sharing Platform:** A dedicated space for A/L students to access and share educational materials.
+- 🔭 **Currently working on:** An AI-powered **Learning Management System (LMS)**.
+- 👯 **Looking to collaborate on:** Open-source AI projects and Creative Web Designs.
+- 🤝 **Looking for help with:** Advanced JavaScript and AI Model Training.
+- 🌱 **Currently learning:** React.js and UI/UX Design.
+- 💬 **Ask me about:** HTML, CSS, PHP, and PC Hardware.
 
 ---
 
-## 🛠 Tech Stack & Tools
+## 🛠 Tech Stack & Tools:
 
 | **Category** | **Tools & Languages** |
 | :--- | :--- |
-| **Frontend** | ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black) |
+| **Frontend** | ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) |
+| **Frameworks** | ![Quasar](https://img.shields.io/badge/Quasar-16B7FB?style=for-the-badge&logo=quasar&logoColor=black) ![Electron.js](https://img.shields.io/badge/Electron-191970?style=for-the-badge&logo=Electron&logoColor=white) ![WordPress](https://img.shields.io/badge/WordPress-%2321759B.svg?style=for-the-badge&logo=WordPress&logoColor=white) |
 | **Backend** | ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) |
-| **CMS & Tools** | ![WordPress](https://img.shields.io/badge/WordPress-%2321759B.svg?style=for-the-badge&logo=WordPress&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05032.svg?style=for-the-badge&logo=git&logoColor=white) ![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) |
-| **Design** | ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) |
+| **Design & Tools** | ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white) ![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05032.svg?style=for-the-badge&logo=git&logoColor=white) |
 
 ---
 
-## 📊 GitHub Activity & Stats
+## 📊 GitHub Stats:
 
 <div align="center">
 
@@ -60,7 +51,7 @@ I focus on creating interactive and efficient digital solutions. Here are some o
 
 ---
 
-## 🌐 Let's Connect
+## 🤝 Let's Connect:
 
 <p align="center">
 <a href="https://www.facebook.com/janiruofficial" target="_blank">![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)</a> 
@@ -69,5 +60,8 @@ I focus on creating interactive and efficient digital solutions. Here are some o
 </p>
 
 <div align="center">
+<br />
+<img src="https://visitcount.itsvg.in/api?id=janiruhansaga&icon=0&color=0" alt="Views" />
+<br />
 <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=100&section=footer" width="100%"/>
 </div>
