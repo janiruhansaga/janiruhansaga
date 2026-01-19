@@ -120,7 +120,6 @@
 
     <canvas id="particle-canvas"></canvas>
 
-    <!-- Sidebar Navigation -->
     <aside id="sidebar"
         class="glass w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 z-30 flex flex-col">
         <div class="px-4 flex items-center justify-between flex-shrink-0">
@@ -130,13 +129,11 @@
                     class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-lg">Janiru
                     Hansaga</span>
             </a>
-            <!-- Mobile Close Button -->
             <button id="close-menu" class="md:hidden text-2xl">
                 &times;
             </button>
         </div>
         <nav class="overflow-y-auto">
-            <!-- Tool Links -->
             <ul id="tool-list" class="space-y-2">
                 <li><a href="#" class="tool-link block py-2.5 px-4 rounded transition duration-200"
                         data-url="https://effulgent-dodol-d198d1.netlify.app/"><i
@@ -187,12 +184,9 @@
         </nav>
     </aside>
 
-    <!-- Main Content Area -->
     <div id="main-app" class="flex-1 flex flex-col">
-        <!-- Header -->
         <header class="glass shadow-md p-4 flex items-center justify-between z-10">
             <div class="flex items-center">
-                <!-- Mobile Menu Button -->
                 <button id="open-menu" class="md:hidden text-white text-2xl mr-4">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -203,7 +197,6 @@
                 PROFILE</button>
         </header>
 
-        <!-- Tool Display Area -->
         <main class="flex-1 p-2 sm:p-4 bg-transparent overflow-y-auto">
             <div id="welcome-screen" class="flex flex-col items-center justify-center h-full text-center text-gray-400">
                 <i class="fas fa-tools text-5xl sm:text-6xl mb-6 text-indigo-500"></i>
@@ -218,10 +211,8 @@
         </main>
     </div>
 
-    <!-- Overlay for mobile menu -->
     <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-20 md:hidden"></div>
 
-    <!-- Profile Slide-out Panel -->
     <div id="profile-page"
         class="glass fixed inset-y-0 right-0 z-50 w-full max-w-md p-6 sm:p-8 transition-transform duration-300 ease-in-out transform translate-x-full overflow-y-auto">
         <div class="flex justify-between items-center mb-6 sm:mb-8">
@@ -253,7 +244,6 @@
         </div>
     </div>
 
-    <!-- Overlay for profile menu -->
     <div id="profile-overlay" class="fixed inset-0 bg-black opacity-50 hidden z-40"></div>
 
 
