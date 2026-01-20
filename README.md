@@ -2,7 +2,7 @@
 
 # <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=35&pause=1000&color=39FF14&center=true&vCenter=true&width=600&lines=Hi+there,+I'm+Janiru+Hansaga;Creative+Developer;Tech+Enthusiast" alt="Typing SVG" />
 
-### 🚀 10th Grade Student | Full-Stack Developer | AI & Design Enthusiast
+### 🚀 12th Grade Student | Full-Stack Developer | AI & Design Enthusiast
 
 <img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/greetings.gif" width="200px">
 
