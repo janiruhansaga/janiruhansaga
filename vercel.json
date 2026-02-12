@@ -2,6 +2,13 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)\\.html",
+      "destination": "/$1",
+      "statusCode": 301
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
