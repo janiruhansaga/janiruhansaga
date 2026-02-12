@@ -73,8 +73,8 @@ def main():
 
     cards_html = ""
     
-    # Process article-1.html to article-10.html
-    for i in range(1, 11):
+    # Process article-1.html to article-11.html
+    for i in range(1, 12):
         filename = f"article-{i}.html"
         file_path = os.path.join(base_dir, filename)
         
@@ -106,41 +106,46 @@ def main():
     with open(post_html_path, 'r', encoding='utf-8') as f:
         post_content = f.read()
 
-    # Construct the new section content
-    new_section_content = f"""
-    <section class="post-section" style="padding: 100px 10%; min-height: 80vh;">
-        <div class="post-container" style="text-align: center; margin-bottom: 50px;">
-            <h1 style="font-size: 3rem;">Latest Posts</h1>
-            <p style="font-size: 1.2rem; color: var(--sub-text);">Explore my latest thoughts and ideas.</p>
-        </div>
-        
-        <div class="container">
-            <div class="blog-grid">
-                {cards_html}
-            </div>
-        </div>
-    </section>
-    """
+    # Construct the new grid content
+    new_grid_content = f"""<div class="blog-grid" id="blogGrid">
+{cards_html}
+        </div>"""
 
-    # Replace the existing post-section
-    # Regex to find the existing <section class="post-section" ...> ... </section>
-    # We match strictly on class="post-section" to avoid replacing other sections if they exist
+    # Replace the existing blog-grid
+    # Regex to find <div class="blog-grid" id="blogGrid"> ... </div>
+    # We use a pattern that matches the opening tag, lazy content, and closing tag
     
-    # Simple replacement if we know the structure roughly, regex for safety
-    updated_content = re.sub(
-        r'<section class="post-section"[^>]*>.*?</section>', 
-        new_section_content, 
-        post_content, 
-        flags=re.DOTALL
-    )
+    # Construct the new grid content
+    new_grid_content = f"""<div class="blog-grid" id="blogGrid">
+{cards_html}
+        </div>"""
+
+    # Robust replacement using prompts
+    start_marker = '<div class="blog-grid" id="blogGrid">'
+    end_marker = '<div class="pagination-container"'
     
-    if updated_content == post_content:
-        print("Warning: content was not replaced. Regex might haven't matched.")
-        # Fallback dump to ensure we see what matches
-        # Try finding just the placeholder text if specific
-        if "Coming Soon..." in post_content:
-             print("Trying simpler replacement on 'Coming Soon...' parent container.")
-             # This is riskier without dom parsing, but let's assume the previous view_file showed standard formatting.
+    start_index = post_content.find(start_marker)
+    end_index = post_content.find(end_marker)
+    
+    if start_index != -1 and end_index != -1:
+        # Check if there is a closing div for the grid before the pagination
+        # We need to preserve the whitespace before pagination if possible, but simplest is just to replace the block
+        # The content to replace is from start_marker to end_marker
+        # BUT we need to assume the blog-grid closes just before pagination-container.
+        # Looking at file, there is </div>\n\n<div class="pagination...
+        
+        # Slicing: Keep everything before start_marker, add new content, keep everything from end_marker
+        # We need to ensure we don't accidentally swallow the grid's closing div if it was separate, but we are reconstructing the grid wrapper in new_grid_content so we essentially replace the old wrapper + content.
+        
+        # However, we must be careful about what is between the last </a> and pagination.
+        # Safest way: Find start, find end. 
+        # Content between start and end should be replaced by new_grid_content + newlines.
+        
+        updated_content = post_content[:start_index] + new_grid_content + "\n\n        " + post_content[end_index:]
+        print("Successfully replaced content using string slicing.")
+    else:
+        print("Markers not found, falling back to regex (risky) or failing.")
+        updated_content = post_content # Do nothing if markers invalid
     
     with open(post_html_path, 'w', encoding='utf-8') as f:
         f.write(updated_content)

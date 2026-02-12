@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk City - AI Prompt Envisioned</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'headings': ['"Outfit"', 'sans-serif'],
+                        'body': ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        'neon-blue': '#00f3ff',
+                        'neon-pink': '#ff00ff',
+                        'dark-bg': '#050505',
+                        'card-bg': '#111111',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #00f3ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Base glow effect */
+        .glow {
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.3), 0 0 20px rgba(0, 243, 255, 0.2);
+        }
+
+        /* Stronger glow for specific elements if needed */
+        .glow-strong {
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5), 0 0 20px rgba(0, 243, 255, 0.3), 0 0 30px rgba(0, 243, 255, 0.1);
+        }
+
+        .glass-panel {
+            background: rgba(17, 17, 17, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .prompt-code {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            border: 1px solid #333;
+            color: #00f3ff;
+        }
+    </style>
+</head>
+
+<body class="font-body antialiased selection:bg-neon-blue selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-panel border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html"
+                class="text-2xl font-headings font-bold hover:scale-105 transition-transform duration-300">
+                JANIRU.<span class="text-neon-blue">AI</span>
+            </a>
+            <a href="index.html"
+                class="px-6 py-2 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-sm font-medium tracking-wide">
+                Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 px-6">
+        <article class="max-w-4xl mx-auto">
+
+            <!-- Header -->
+            <header class="text-center mb-16 space-y-6">
+                <div
+                    class="inline-block px-4 py-1.5 rounded-full bg-neon-blue/10 border border-neon-blue/20 text-neon-blue text-xs font-bold tracking-widest uppercase mb-4">
+                    Prompt Engineering
+                </div>
+                <h1 class="text-5xl md:text-7xl font-headings font-bold leading-tight tracking-tight mb-2">
+                    <span class="gradient-text glow">Cyberpunk City</span>
+                </h1>
+                <p class="text-xl text-gray-400 font-light max-w-2xl mx-auto leading-relaxed">
+                    Neon-drenched streets, towering megastructures, and the solitude of the digital age. Exploring the
+                    boundaries of AI-generated sci-fi landscapes.
+                </p>
+            </header>
+
+            <!-- Featured Image -->
+            <div
+                class="rounded-3xl overflow-hidden shadow-2xl shadow-neon-blue/10 border border-white/10 mb-16 group relative">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 z-10">
+                </div>
+                <!-- 
+                     Using the base64 placeholder or file path. 
+                     Since generate_content.py extracts base64 from similar files, 
+                     I will assume I should provide a placeholder or let the script populate it if I had the raw data.
+                     However, I must provide a VALID image tag for the script to pick up if it was a real scenario.
+                     For now, I'll use a placeholder or the content from post11.html if it had one.
+                     post11.html has <img src="11.png" ...> but not base64. 
+                     I will try to find if there is a base64 string in other files to copy or I will leave it as a placeholder.
+                     Actually, Article 10 had a huge base64 string. 
+                     I will use a placeholder src for now as I don't have the "11.png" content in base64. 
+                     Wait, generate_content.py reads data:image/png;base64,... from the html file!
+                     So I should ideally put the base64 here if I want the script to create a thumbnail.
+                     Since I don't have the base64 of 11.png, I will use a placeholder text or just the <img> tag.
+                     The script `generate_content.py` looks for `data:image/png;base64`. 
+                     If I don't put it, the thumbnail will be "placeholder.png".
+                     I will just use a standard img tag for now.
+                -->
+                <img src="11.png" alt="Cyberpunk City Visualization"
+                    class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
+            </div>
+
+            <!-- Content Body -->
+            <div class="prose prose-invert prose-lg max-w-none space-y-12 text-gray-300">
+
+                <section>
+                    <h2 class="text-3xl font-headings font-bold text-white mb-6">The Process</h2>
+                    <p>
+                        Creating a compelling Cyberpunk aesthetic is more than just adding neon lights. It's about
+                        capturing
+                        the atmosphereâ€”the rain-slicked streets, the towering verticality of the architecture, and
+                        that
+                        distinct feeling of high-tech low-life. In this generation, we focused on "cinematic luxury
+                        photography style"
+                        combined with the gritty reality of a futuristic metropolis (or character portrait, as per the
+                        specific prompt used).
+                    </p>
+                </section>
+
+                <!-- Prompt Section -->
+                <div class="glass-panel p-8 rounded-2xl border-l-4 border-neon-blue my-12">
+                    <h3 class="text-xl font-headings font-bold text-white flex items-center gap-3 mb-6">
+                        <svg class="w-6 h-6 text-neon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        The Prompt
+                    </h3>
+                    <div class="prompt-code p-6 rounded-lg text-sm leading-relaxed overflow-x-auto">
+                        The provided image creates an ultra-realistic, highly detailed portrait of the man himself,
+                        seated on an
+                        ornate black leather throne with a high back and intricate carvings. He is wearing a perfectly
+                        tailored
+                        black three-piece suit, a black tie and pocket square, and a luxurious wristwatch is visible. He
+                        is
+                        wearing dark sunglasses, and confidently holds his hands, one leg crossed over the other. The
+                        background
+                        features a regal, dark backdrop with two lit candles on each side and a gold crest above the
+                        throne.
+                        Dramatic low-key lighting with warm highlights and deep shadows. Vertical 9:16, Canon EOS R5 +
+                        RF 85mm
+                        f/1.2 lens, aperture f/2, 8K resolution, cinematic luxury photography style.
+                        This is a must-have in the design, without altering or changing the facial features and natural
+                        identity
+                        of the reference photo. This is extremely important. The facial features in the reference photo
+                        and the
+                        image you are editing should be at least 99.9% the same
+                    </div>
+                </div>
+
+                <section>
+                    <h2 class="text-3xl font-headings font-bold text-white mb-6">Technical Details</h2>
+                    <ul class="space-y-4 list-disc pl-6 marker:text-neon-blue">
+                        <li><strong class="text-white">Camera:</strong> Canon EOS R5 + RF 85mm f/1.2 lens</li>
+                        <li><strong class="text-white">Aperture:</strong> f/2</li>
+                        <li><strong class="text-white">Lighting:</strong> Dramatic low-key with warm highlights</li>
+                        <li><strong class="text-white">Resolution:</strong> 8K Cinematic</li>
+                    </ul>
+                    <p class="mt-6">
+                        The prompt explicitly requests preservation of facial identity ("99.9% the same"), suggesting
+                        this
+                        workflow involves using a reference image (Image-to-Image) or a specific LoRA/embedding to
+                        maintain
+                        character consistency within the new environment.
+                    </p>
+                </section>
+
+            </div>
+
+            <!-- Footer / Navigation -->
+            <div class="mt-20 pt-10 border-t border-white/10 flex justify-between items-center">
+                <a href="article-10.html"
+                    class="group flex items-center gap-4 text-gray-400 hover:text-white transition-colors">
+                    <div
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-neon-blue/20 transition-colors">
+                        â†
+                    </div>
+                    <span class="font-medium">Previous: Grok-2</span>
+                </a>
+                <a href="index.html" class="text-gray-500 hover:text-white transition-colors text-sm">
+                    Back to Gallery
+                </a>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 text-center text-gray-600 text-sm border-t border-white/5 mt-20">
+        <p>Â© 2025 Janiru Hansaga. Built with AI & Passion.</p>
+    </footer>
+
+</body>
+
+</html>
